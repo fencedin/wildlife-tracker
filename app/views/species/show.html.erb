@@ -3,7 +3,7 @@
 <ul>
   <% @species.sightings.each do |sighting| %>
     <li>
-      <p><%= sighting.date %>, <%= sighting.location %>
+      <p><%= sighting.date %>, <%= sighting.location %>, Region: <%= sighting.region_id %>
       <a href="/sightings/<%= sighting.id %>/edit">edit</a>
       <a href="/sightings/<%= sighting.id %>"
         data-confirm="Are you sure?"
@@ -12,3 +12,5 @@
     </li>
   <% end %>
 </ul>
+
+<p><a href="/">Go back to Species List</a></p>

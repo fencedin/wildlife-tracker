@@ -9,7 +9,8 @@ class SightingsController < ApplicationController
   def create
     species = Species.find(params[:species_id])
     @sighting = species.sightings.new(:date =>params[:date],
-                             :location => params[:location])
+                             :location => params[:location],
+                             :region_id => params[:region_id])
     if @sighting.save
       #flash[:alert] = "Sighting Registered!"
       @species_all = Species.all
@@ -28,7 +29,8 @@ class SightingsController < ApplicationController
   def update
     @sighting = Sighting.find(params[:id])
     @sighting.update(:date => params[:date],
-                     :location => params[:location])
+                     :location => params[:location],
+                     :region_id => params[:region_id])
     if @sighting.save
       @species = @sighting.species
       render 'species/show.html.erb'

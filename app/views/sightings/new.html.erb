@@ -11,8 +11,15 @@
 
 <form action="/species/<%= @sighting.species.id %>/sightings" method="post">
   <label for="sighting_date">Date</label>
-  <input id="sighting_date" name="date" type="datetime">
+  <input id="sighting_date" name="date" type="datetime-local">
   <label for="sighting_location">Location</label>
   <input id="sighting_location" name="location" type="text">
+  <label for="sighting_region">Region</label>
+  <select id="sighting_region" name="region_id">
+    <option value="1">North West</option>
+    <option value="2">North East</option>
+    <option value="3">South West</option>
+    <option value="4">South East</option>
+  </select>
   <button>Create Sighting</button>
 </form>
