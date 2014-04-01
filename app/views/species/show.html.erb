@@ -1,0 +1,14 @@
+<h1><%= @species.name %></h1>
+
+<ul>
+  <% @species.sightings.each do |sighting| %>
+    <li>
+      <p><%= sighting.date %>, <%= sighting.location %>
+      <a href="/sightings/<%= sighting.id %>/edit">edit</a>
+      <a href="/sightings/<%= sighting.id %>"
+        data-confirm="Are you sure?"
+        data-method="delete"
+        rel="nofollow>">Delete</a></p>
+    </li>
+  <% end %>
+</ul>

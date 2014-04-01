@@ -9,7 +9,9 @@ class SpeciesController < ApplicationController
     @species_all = Species.all
     @species = Species.new(:name =>params[:name])
     if @species.save
-      render 'species/index.html.erb'
+      # flash[:alert] = "Species Created!"
+      @sighting = @species.sightings.new
+      render 'sightings/new.html.erb'
     else
       render 'species/index.html.erb'
     end
@@ -23,7 +25,7 @@ class SpeciesController < ApplicationController
   def update
     @species_all = Species.all
     @species = Species.find(params[:id])
-    @species.update(:name =>params[:name])
+    @species.update(:name => params[:name])
     if @species.save
       render 'species/index.html.erb'
     else
@@ -35,8 +37,11 @@ class SpeciesController < ApplicationController
     @species_all = Species.all
     @species = Species.find(params[:id])
     @species.destroy
-    flash.alert = "Species deleted!"
-    flash.notice = "Species destroyed!"
     render 'species/index.html.erb'
+  end
+
+  def show
+    @species = Species.find(params[:id])
+    render('species/show.html.erb')
   end
 end
