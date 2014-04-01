@@ -1,7 +1,32 @@
 <h1>Species</h1>
 
 <ul>
-  <% @species.each do |species| %>
-    <li><%= species.name %></li>
+  <% @species_all.each do |species| %>
+    <li>
+      <a href="/species/<%= species.id %>"><%= species.name %></a>
+      <a href="/species/<%= species.id %>/edit">edit</a>
+      <a href="/species/<%= species.id %>"
+        data-confirm="Are you sure?"
+        data-method="delete"
+        rel="nofollow>">Delete</a>
+    </li>
   <% end %>
 </ul>
+
+
+<h4>New Species</h4>
+
+<% if @species.errors.any? %>
+  <h5>Please fix these errors:</h5>
+  <ul>
+    <% @species.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/species" method="post">
+  <label for="species_name">Name</label>
+  <input id="species_name" name="name" type="text">
+  <button>Create Species</button>
+</form>
