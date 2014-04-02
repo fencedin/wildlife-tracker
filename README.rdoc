@@ -8,4 +8,6 @@ The Forest Service is considering a proposal from a timber company to clear-cut 
 
 * Next, allow them to input a sighting of an animal, along with the date, time, and location. (Hint: a species has many sightings.) Add CRUD functionality for these sightings. (COMPLETE)
 
-* Now, the area under consideration has been divided into several regions. Build out CRUD/L functionality for regions, and when a user reports a sighting, have them choose the region from a drop-down menu. (Hint: do a web search for html drop-down mdn.)
+* Now, the area under consideration has been divided into several regions. Build out CRUD/L functionality for regions, and when a user reports a sighting, have them choose the region from a drop-down menu. (Hint: do a web search for html drop-down mdn.) (COMPLETE)
+
+* Now, let users run reports to list all the sightings during a given time period. (Work in progress)

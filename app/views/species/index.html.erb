@@ -1,4 +1,4 @@
-<h1>Species</h1>
+<h1>SPECIES</h1>
 
 <ul>
   <% @species_all.each do |species| %>
@@ -13,7 +13,17 @@
     </li>
   <% end %>
 </ul>
+<br>
 
+<form action="/sightings" method="get">
+  <label for="sightings_start_date">Start date</label>
+  <input id="sightings_start_date" name="sightings[start_date]" type="datetime-local">
+  <label for="sightings_end_date">End date</label>
+  <input id="sightings_end_date" name="sightings[end_date]" type="datetime-local">
+  <button>Run report</button>
+</form>
+
+<br>
 
 <h4>New Species</h4>
 

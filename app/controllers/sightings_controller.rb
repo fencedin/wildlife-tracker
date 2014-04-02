@@ -46,4 +46,9 @@ class SightingsController < ApplicationController
     @species = @sighting.species
     render 'species/show.html.erb'
   end
+
+  def report
+    @sightings = Sighting.between(params[:sightings])
+    render 'sightings/report.html.erb'
+  end
 end

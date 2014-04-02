@@ -1,0 +1,14 @@
+<h1>Print Reports</h1>
+
+
+
+<ul>
+  <% @selected_sightings.each do |sighting| %>
+    <li>
+      <%= species.name %>
+    </li>
+  <% end %>
+</ul>
+
+
+<p><a href="/">Go back to Species List</a></p>
